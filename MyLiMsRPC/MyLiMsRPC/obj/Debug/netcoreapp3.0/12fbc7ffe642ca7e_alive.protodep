@@ -1,0 +1,3 @@
+obj\Debug\netcoreapp3.0/Alive.cs \
+obj\Debug\netcoreapp3.0/AliveGrpc.cs: C:/Users/Andre.Borges/.nuget/packages/grpc.tools/2.23.0/build/native/include/google/protobuf/empty.proto\
+ Protos/alive.proto

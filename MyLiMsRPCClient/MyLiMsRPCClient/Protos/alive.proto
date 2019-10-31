@@ -1,0 +1,24 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "MyLiMsRPCClient";
+
+package alive;
+
+// The greeting service definition.
+service Alive {
+  // Sends a greeting
+  rpc Sum (SumRequest) returns (SumReply);
+}
+
+// The request message containing the user's name.
+message SumRequest {
+  int32 number1 = 1;
+  int32 number2 = 2;
+}
+
+// The response message containing the greetings.
+message SumReply {
+  int32 message = 1;
+}

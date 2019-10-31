@@ -1,0 +1,36 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "MyLiMsRPCClient";
+
+package cinema;
+
+// The greeting service definition.
+service Cinema {
+  // Get available movies
+  rpc GetAvailableMovies (google.protobuf.Empty) returns (stream GetAvailableMoviesResponse);
+  // Get available ticket count
+  rpc GetAvailableTicketsForMovie (GetAvailableTicketsForMovieRequest) returns (GetAvailableTicketsForMovieResponse);
+}
+
+// The response message to get available movies
+message GetAvailableMoviesResponse {
+  int32 movieId = 1;
+  string name = 2;
+  string genre = 3;
+  int32 duration = 4;
+  double classification = 5;
+  int32 numberOfAvailableTickets = 6;
+}
+
+// The request message to get the available ticket count
+message GetAvailableTicketsForMovieRequest {
+  int32 movieId = 1;
+}
+
+// The response message containing the available ticket count
+message GetAvailableTicketsForMovieResponse {
+  int32 availableTickets = 1;
+}
+

@@ -1,0 +1,24 @@
+// "message" keyword for defining data structure
+// "service" keyword for defining service
+// "rpc" keyword for defining function of a service
+
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "MyLiMsRPC";
+
+package alive;
+
+service Alive {
+	rpc Sum (SumRequest) returns (SumReply);
+}
+
+message SumRequest {
+	int32 number1 = 1;
+	int32 number2 = 2;
+}
+
+message SumReply {
+	int32 message = 1;
+}
